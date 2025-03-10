@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9fafc;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff9900, #ffcc00);
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Space between logo and links */
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #222;
+            color: #fff;
+        }
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex; /* Ensures items are displayed in a row */
+            gap: 20px; /* Adds spacing between items */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            align-items: center; /* Vertically aligns items */
+        }
+
+        .navbar ul li {
+            display: inline-block; /* Ensures all items stay inline */
+        }
+
+        .navbar ul li a {
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 1.2rem; 
+            text-align: center; /* Ensures text is centered */
+
+        }
+
+        .navbar ul li a:hover {
+            background-color: #444;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .subject {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .subject:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .subject h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .topics ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .topics ul li {
+            margin: 10px 0;
+        }
+
+        .topics ul li a {
+            display: block;
+            font-size: 1.2rem;
+            color: #ff9900;
+            padding: 8px 16px;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .topics ul li a:hover {
+            background-color: #ffcc00;
+            color: #fff;
+        }
+        .footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #ff9900;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .user-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">EduLinks</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <!-- Initially show the login button, but will be replaced with user icon after login -->
+                <a href="Admin Login page.html" id="loginBtn" class="login-btn">Login</a>
+                <div id="userIcon" class="user-icon" style="display: none;">
+                    <span>👤</span>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Data Science</h1>
+    </header>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="subject">
+            <h2>Topics</h2>
+            <div class="topics">
+                <ul>
+                    <li><a href="#" onclick="fetchTopics(6)">Data Science Introduction</a></li>
+                    <li><a href="#" onclick="fetchTopics(6)">Data Science Modelling</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 EduLinks. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
